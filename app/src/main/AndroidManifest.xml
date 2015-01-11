@@ -1,0 +1,20 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.androiddev.mattfromger.smartquickcircle">
+
+    <application android:allowBackup="true" android:label="@string/app_name"
+        android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme"
+        android:debuggable="true">
+
+        <meta-data
+            android:name="xposedmodule"
+            android:value="true" />
+        <meta-data
+            android:name="xposeddescription"
+            android:value="Smart QuickCircle Mod for LG G3: Automatically opens notifications or music playback view" />
+        <meta-data
+            android:name="xposedminversion"
+            android:value="30" />
+
+    </application>
+
+</manifest>
