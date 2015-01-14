@@ -17,17 +17,14 @@ public class MainClass implements IXposedHookLoadPackage {
 
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
 
-        XposedBridge.log("Loaded app: " + lpparam.packageName);
-        Log.v("com.androiddev.mattfromger.smartquickcircle","test12345");
+        XposedBridge.log("SmartQuickCircle app working!");
 
-        //findAndHookMethod("com.android.keyguard", lpparam.classLoader, "showQuickCoverWindow", new XC_MethodHook() {
-        findAndHookMethod("com.android.systemui.statusbar.policy.Clock", lpparam.classLoader, "updateClock", new XC_MethodHook() {
+        findAndHookMethod("com.android.keyguard.KeyguardViewManager", lpparam.classLoader, "showQuickCoverWindow", new XC_MethodHook() {
+        //findAndHookMethod("com.android.systemui.statusbar.policy.Clock", lpparam.classLoader, "updateClock", new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                TextView tv = (TextView) param.thisObject;
-                String text = tv.getText().toString();
-                tv.setText(text + " :)");
-                tv.setTextColor(Color.RED);
+                XposedBridge.log("lloolololololololol");
+                Log.v("com.androiddev.mattfromger.smartquickcircle","lololololololololololol");
             }
         });
     }
