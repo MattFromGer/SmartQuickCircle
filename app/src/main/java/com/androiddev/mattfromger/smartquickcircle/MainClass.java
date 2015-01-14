@@ -13,32 +13,14 @@ import de.robv.android.xposed.callbacks.XC_LoadPackage.LoadPackageParam;
 import android.graphics.Color;
 import android.widget.TextView;
 
-public class MainClass implements IXposedHookLoadPackage{
+public class MainClass implements IXposedHookLoadPackage {
 
     public void handleLoadPackage(final LoadPackageParam lpparam) throws Throwable {
 
         XposedBridge.log("Loaded app: " + lpparam.packageName);
-        Log.v("com.androiddev.mattfromger.smartquickcircle","Loaded");
-/*
-        findAndHookMethod("com.lge.clock.quickcover.QuickCoverFactory", lpparam.classLoader, "getQuickCover", new XC_MethodHook() {
-            @Override
-            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                super.afterHookedMethod(param);
-                Log.v("com.androiddev.mattfromger.smartquickcircle","lolololololololol");
-                XposedBridge.log("lolololololololololololol");
-            }
-        });*/
+        Log.v("com.androiddev.mattfromger.smartquickcircle","test1234");
 
-
-        findAndHookMethod("com.android.keyguard", lpparam.classLoader, "showQuickCoverWindow", new XC_MethodHook() {
-            @Override
-            protected void afterHookedMethod(MethodHookParam param) throws Throwable {
-                super.afterHookedMethod(param);
-                Log.v("com.androiddev.mattfromger.smartquickcircle","lolololololololol");
-                XposedBridge.log("lolololololololololololol");
-            }
-        });
-        /*
+        //findAndHookMethod("com.android.keyguard", lpparam.classLoader, "showQuickCoverWindow", new XC_MethodHook() {
         findAndHookMethod("com.android.systemui.statusbar.policy.Clock", lpparam.classLoader, "updateClock", new XC_MethodHook() {
             @Override
             protected void afterHookedMethod(MethodHookParam param) throws Throwable {
@@ -47,6 +29,6 @@ public class MainClass implements IXposedHookLoadPackage{
                 tv.setText(text + " :)");
                 tv.setTextColor(Color.RED);
             }
-        });*/
+        });
     }
 }
