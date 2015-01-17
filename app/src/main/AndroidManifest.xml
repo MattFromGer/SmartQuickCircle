@@ -2,18 +2,24 @@
     package="com.androiddev.mattfromger.smartquickcircle">
 
     <application android:allowBackup="true" android:label="@string/app_name"
-        android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme"
-        android:debuggable="true">
+        android:icon="@drawable/ic_launcher" android:theme="@style/AppTheme">
 
         <meta-data
             android:name="xposedmodule"
             android:value="true" />
         <meta-data
             android:name="xposeddescription"
-            android:value="Smart QuickCircle Mod for LG G3: Automatically opens notifications or music playback view" />
+            android:value="Smart QuickCircle Mod for LG G3: Automatically opens music playback view" />
         <meta-data
             android:name="xposedminversion"
             android:value="30" />
+        <activity android:exported="true" android:name="com.yoavst.quickapps.music.CMusicActivity">
+            <intent-filter>
+                <action android:name="com.yoavst.quickapps.music.CMusicActivity"/>
+                <category android:name="android.intent.category.DEFAULT"/>
+            </intent-filter>
+
+        </activity>
 
     </application>
 
